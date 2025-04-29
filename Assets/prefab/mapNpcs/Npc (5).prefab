@@ -162,7 +162,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1.9999999, z: 2}
+  m_Size: {x: 3, y: 1.9999999, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1225175434819927208
 MonoBehaviour:
@@ -180,6 +180,7 @@ MonoBehaviour:
   inkJson: {fileID: 4900000, guid: e839e63c02ce9c4489a56463029e55bc, type: 3}
   cutsceneDailogue: {fileID: 4900000, guid: 1a061df9d5d3be046aa7be3d56a0683e, type: 3}
   IsCutscene: 0
+  IsFinalCutscene: 0
   ItemRequired: 0
   Item: {fileID: 0}
   isNonLinear: 0

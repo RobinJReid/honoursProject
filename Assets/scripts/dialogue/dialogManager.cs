@@ -121,7 +121,8 @@ public class dialogManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
+        _cursorLocked = true;
         yield return new WaitForSeconds(0.2f);
         dialogueisPlaying=false;
         Debug.Log("S1Done:" + stage1Done + "S1Delete:" + stage1Delete + "S2Done:" + stage2Done + "S2Delete:" + stage2Delete);
@@ -178,6 +179,7 @@ public class dialogManager : MonoBehaviour
            SceneManager.LoadScene("End");
             
         }
+        
     }
 
     private void ContinueStory()

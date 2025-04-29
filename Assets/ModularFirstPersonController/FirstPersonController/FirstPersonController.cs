@@ -18,6 +18,8 @@ public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
 
+
+
     #region Camera Movement Variables
 
     public Camera playerCamera;
@@ -202,6 +204,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+       
         #region Camera
 
         // Control camera movement
@@ -368,7 +371,7 @@ public class FirstPersonController : MonoBehaviour
     {
         #region Movement
 
-        if (playerCanMove)
+        if (playerCanMove && !dialogManager.getInstance().dialogueisPlaying)
         {
             // Calculate how fast we should be moving
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -501,8 +504,12 @@ public class FirstPersonController : MonoBehaviour
     {
         if(isWalking)
         {
+            if (dialogManager.getInstance().dialogueisPlaying)
+            {
+                return;
+            }
             // Calculates HeadBob speed during sprint
-            if(isSprinting)
+            if (isSprinting)
             {
                 timer += Time.deltaTime * (bobSpeed + sprintSpeed);
             }
